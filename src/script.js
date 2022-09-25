@@ -1,3 +1,32 @@
+/* hover menu actions */
+
+const menuLinksArray = document.querySelectorAll('.hover-menu-link')
+const menuCards = document.querySelectorAll('.menu-card-link')
+const menuTitle = document.querySelector('.menu-title-value')
+
+const cardsDescription = {
+    1: ['Free contact maker','Social Media Managment Contact Template','Graphic Design Contract Template','Digital Marketing Contract Template'],
+    2: ['Graphic Design Proposal Template','Buisness Proposal Template','Brand Ambassador Proposal Template','Data Entry Proposal Letter Template'],
+    3: ['Social Media Invoice Templates','Contractor Invoice Template','Web Design Invoice Template','Influencer Invoice Template'],
+    4: ['Influencer Agreement Template','Influencer Collaboration Agreement Template','Monthly Retainer Agreement Template','Writer Agreement Template'],
+    5: ['Web Design Quotation Template','Interior Design Quotation Template','Digital Marketing Quotation Template','Video Production Quotation Template'],
+    6: ['Website Development Scope of Work Template','Digital Marketing Scope of Work Template','Consultant Scope of Work Template','Interior Design Scope of Work Template'],
+    7: ['Design Brief Template','Architecture Design Brief','Fashion Design Brief','Creative Brief Template'],
+}
+
+menuLinksArray.forEach(link => {
+    link.addEventListener('mouseover', e => {
+        const attrValue = e.target.attributes[2].value;
+
+        menuTitle.textContent = e.target.textContent
+
+        menuCards.forEach((card,index) => {
+            card.textContent = cardsDescription[attrValue][index]
+        })
+    })
+})
+
+
 /* dropdown for faq section */
 
 const faqListArray = document.querySelectorAll('.faq-list-item')
